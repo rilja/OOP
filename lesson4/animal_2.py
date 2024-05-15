@@ -6,21 +6,27 @@
 class Animal:
 
     def __init__(self, name):
-        pass
+        self.name = name
 
-    def walk(self):
-        pass
+    def speak(self):
+        print('?')
 
 
 class Dog(Animal):
 
-    def bark(self):
-        print('Bark!')
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        print('Woof!')
 
 
 class Cat(Animal):
 
-    def meow(self):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
         print('Meow!')
 
 
@@ -28,5 +34,6 @@ class Cat(Animal):
 animals = [Dog('Dog1'), Dog('Dog2'), Cat('Cat1'), Dog('Dog3')]
 
 for animal in animals:
+    animal.speak()
     # Должно выводиться Bark или Meow в зависимости от того какой класс
     pass
